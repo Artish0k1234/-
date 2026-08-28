@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кот Учёный | Школа английского языка</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap"
+    rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0F1E36',
+              navy: '#1A2E4D',
+              amber: '#D97706',
+              amberHover: '#B45309',
+              light: '#F8FAFC',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes heroZoomExpand {
+      0% {
+        transform: scale(0.65);
+        border-radius: 40px;
+        opacity: 0.2;
+      }
+
+      100% {
+        transform: scale(1);
+        border-radius: 0px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-zoom-expand {
+      animation: heroZoomExpand 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-light text-slate-800 font-sans antialiased selection:bg-brand-amber selection:text-white">
+
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-brand-blue/90 backdrop-blur-md text-white border-b border-slate-700/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <span class="text-3xl transition-transform group-hover:scale-110">🐱🎓</span>
+        <div>
+          <span class="font-serif text-xl font-bold tracking-tight block">Кот Учёный</span>
+          <span class="text-xs text-amber-300 font-medium tracking-wider uppercase">English School</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-200">
+        <a href="#about" class="hover:text-amber-400 transition-colors">О школе</a>
+        <a href="#programs" class="hover:text-amber-400 transition-colors">Программы</a>
+        <a href="#benefits" class="hover:text-amber-400 transition-colors">Преимущества</a>
+        <a href="#contact" class="hover:text-amber-400 transition-colors">Контакты</a>
+      </nav>
+
+      <div class="hidden sm:block">
+        <a href="#contact"
+          class="bg-brand-amber hover:bg-brand-amberHover text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md">
+          Бесплатный урок
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative w-full min-h-screen bg-brand-blue flex items-center justify-center overflow-hidden pt-20">
+
+      <div class="absolute inset-0 w-full h-full overflow-hidden shadow-2xl animate-zoom-expand z-0">
+        <video id="hero-video" src="hero-book.mp4" autoplay muted playsinline preload="auto"
+          class="w-full h-full object-cover"></video>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/50 to-brand-blue/70 pointer-events-none">
+        </div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center py-16 animate-fade-in-up">
+        <div
+          class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 px-4 py-1.5 rounded-full backdrop-blur-md mb-6">
+          <span class="text-amber-300 text-xs sm:text-sm font-semibold tracking-wider uppercase">
+            ✨ Открыт набор на новый семестр
+          </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 drop-shadow-lg">
+          Открой мир знаний <br />
+          <span class="text-amber-400 italic font-normal">без зубрежки</span> и страха
+        </h1>
+
+        <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow">
+          Современная школа английского языка «Кот Учёный». Интерактивные методики, живое общение с первого занятия и
+          комфортная атмосфера для любого возраста.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact"
+            class="bg-brand-amber hover:bg-brand-amberHover text-white px-8 py-4 rounded-xl font-bold text-base transition-all shadow-xl hover:shadow-amber-500/20">
+            Записаться на пробный урок
+          </a>
+          <a href="#programs"
+            class="bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md px-8 py-4 rounded-xl font-semibold text-base transition-all">
+            Выбрать направление
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-blue mb-4">Почему «Кот Учёный»?</h2>
+          <p class="text-slate-600">Мы убрали скучные лекции и создали пространство, где язык учится через живое
+            взаимодействие.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-8 rounded-2xl bg-brand-light border border-slate-200/70 hover:shadow-xl transition-all">
+            <div class="text-4xl mb-4">🗣️</div>
+            <h3 class="text-xl font-bold text-brand-blue mb-2">80% разговорной речи</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Вы начинаете говорить на английском прямо на первом уроке, независимо от стартового уровня.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-brand-light border border-slate-200/70 hover:shadow-xl transition-all">
+            <div class="text-4xl mb-4">👥</div>
+            <h3 class="text-xl font-bold text-brand-blue mb-2">Мини-группы до 6 человек</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Максимум внимания каждому ученику. Преподаватель следит за прогрессом и правильным произношением.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-brand-light border border-slate-200/70 hover:shadow-xl transition-all">
+            <div class="text-4xl mb-4">☕</div>
+            <h3 class="text-xl font-bold text-brand-blue mb-2">Уютная атмосфера</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Никакой строгой школьной критики. Только чай, печенье, комфортные классы и поддержка единомышленников.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="py-24 bg-brand-light border-y border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-blue mb-4">Программы обучения</h2>
+          <p class="text-slate-600">Индивидуальные и групповые траектории под любые цели.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 transition-all shadow-sm">
+            <div>
+              <span class="text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full uppercase">4–7 лет</span>
+              <h3 class="text-xl font-bold text-brand-blue mt-4 mb-2">Kitten Club</h3>
+              <p class="text-slate-600 text-sm mb-4">Обучение в игровой форме: песни, мультфильмы, сказки и
+                интерактивные занятия.</p>
+            </div>
+            <a href="#contact" class="text-brand-amber font-semibold text-sm hover:underline">Записаться →</a>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 transition-all shadow-sm">
+            <div>
+              <span class="text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full uppercase">8–13
+                лет</span>
+              <h3 class="text-xl font-bold text-brand-blue mt-4 mb-2">School Boost</h3>
+              <p class="text-slate-600 text-sm mb-4">Помощь со школьной программой, преодоление барьеров и расширение
+                словарного запаса.</p>
+            </div>
+            <a href="#contact" class="text-brand-amber font-semibold text-sm hover:underline">Записаться →</a>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 transition-all shadow-sm">
+            <div>
+              <span class="text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full uppercase">14–17
+                лет</span>
+              <h3 class="text-xl font-bold text-brand-blue mt-4 mb-2">Teens & Exams</h3>
+              <p class="text-slate-600 text-sm mb-4">Подготовка к ОГЭ и ЕГЭ, обсуждение современных тем, подготовка к
+                международным тестам.</p>
+            </div>
+            <a href="#contact" class="text-brand-amber font-semibold text-sm hover:underline">Записаться →</a>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 transition-all shadow-sm border-t-4 border-t-brand-amber">
+            <div>
+              <span class="text-xs font-bold text-brand-blue bg-blue-50 px-3 py-1 rounded-full uppercase">18+ лет</span>
+              <h3 class="text-xl font-bold text-brand-blue mt-4 mb-2">Adults English</h3>
+              <p class="text-slate-600 text-sm mb-4">Разговорный английский для путешествий, работы, переезда и
+                комфортного общения.</p>
+            </div>
+            <a href="#contact" class="text-brand-amber font-semibold text-sm hover:underline">Записаться →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand-blue text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="bg-brand-navy border border-slate-700 rounded-3xl p-8 sm:p-12 shadow-2xl">
+          <div class="text-center max-w-xl mx-auto mb-8">
+            <h2 class="text-3xl font-serif font-bold text-white mb-3">Запишитесь на бесплатный урок</h2>
+            <p class="text-slate-300 text-sm">
+              Мы определим точный уровень владения языком и предложим оптимальный формат занятий.
+            </p>
+          </div>
+
+          <form class="space-y-4 max-w-md mx-auto"
+            onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка принята. Кот Учёный скоро свяжется с вами.');">
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1">Имя</label>
+              <input type="text" required placeholder="Константин"
+                class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1">Телефон / Telegram</label>
+              <input type="text" required placeholder="+7 (999) 000-00-00"
+                class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1">Возрастная группа</label>
+              <select
+                class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 text-sm">
+                <option>Дети (4–7 лет)</option>
+                <option>Школьники (8–13 лет)</option>
+                <option>Подростки (14–17 лет)</option>
+                <option>Взрослые (18+)</option>
+              </select>
+            </div>
+
+            <button type="submit"
+              class="w-full bg-brand-amber hover:bg-brand-amberHover text-white py-4 rounded-xl font-bold text-base transition-all shadow-lg mt-2">
+              Забронировать место
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-400 py-10 text-sm border-t border-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🐱🎓</span>
+        <span class="font-serif font-bold text-white">Кот Учёный</span>
+        <span class="text-slate-600">|</span>
+        <span>© 2026 Все права защищены.</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="https://t.me/" target="_blank" class="hover:text-amber-400 transition-colors">Telegram</a>
+        <a href="https://vk.com/" target="_blank" class="hover:text-amber-400 transition-colors">ВКонтакте</a>
+        <a href="https://wa.me/" target="_blank" class="hover:text-amber-400 transition-colors">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      (function () {
+        const video = document.getElementById('hero-video');
+        if (!video) return;
+
+        // Target pause time in seconds (Adjust between 4.8 and 5.5 to choose the exact frame)
+        const PAUSE_TIMESTAMP = 6.4;
+        let hasPaused = false;
+
+        function checkAndFreeze() {
+          if (hasPaused) return;
+
+          // If video reaches the target frame OR reaches the end of the clip
+          if (video.currentTime >= PAUSE_TIMESTAMP || (video.duration && video.currentTime >= video.duration - 0.1)) {
+            video.pause();
+            hasPaused = true;
+            return;
+          }
+
+          requestAnimationFrame(checkAndFreeze);
+        }
+
+        // Start tracking immediately
+        requestAnimationFrame(checkAndFreeze);
+        video.addEventListener('timeupdate', checkAndFreeze);
+        video.addEventListener('play', () => requestAnimationFrame(checkAndFreeze));
+      })();
+  </script>
+
+</body>
+
+</html>
